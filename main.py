@@ -16,7 +16,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
 
 st.set_page_config(
-    page_title="Buscador Propuestas",
+    page_title="Buscador de Propuestas",
     layout="wide",
     menu_items={
         'Get help': 'https://www.notus.cl/', "Report a bug": 'https://www.notus.cl/',"About": 'https://www.notus.cl/'}
@@ -79,7 +79,7 @@ name, authentication_status, username = authenticator.login(location='main')
 
 if authentication_status:
     authenticator.logout('Logout', 'main')
-    st.write(f'Welcome *{name}*')
+    st.write(f'Bienvenido *{name}*')
 # Título
     st.title(':paperclip: Buscador de Propuestas')
 
@@ -291,6 +291,6 @@ if authentication_status:
         message.write(respuesta)
         st.session_state.messages.append({"role": "assistant", "content": respuesta})
 elif authentication_status == False:
-    st.error('Username/password is incorrect')
+    st.error('Usuario/Contraseña incorrectos')
 elif authentication_status == None:
-    st.warning('Please enter your username and password')
+    st.warning('Por favor, ingresa tu nombre de usuario y contraseña')
