@@ -8,3 +8,4 @@ langchain_openai
 openpyxl
 chromadb
 streamlit-chromadb-connection
+pysqlite3-binary
