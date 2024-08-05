@@ -272,7 +272,7 @@ if authentication_status:
         chunk_size = 1500,
         chunk_overlap = 150)
     splits = text_splitter.split_documents(pages)
-    docsearch =FAISS.from_texts(splits, embedding)    
+    docsearch =FAISS.from_documents(splits, embedding)     
     qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=docsearch.as_retriever(), chain_type_kwargs=chain_type_kwargs)
     st.subheader('¿No encontraste un proyecto? ¡Te ayudo a buscar uno similar!')
     if "messages" not in st.session_state:
