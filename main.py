@@ -6,7 +6,6 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
-import sqlite3
 from streamlit_authenticator import Authenticate
 import yaml
 import openai
@@ -14,7 +13,6 @@ from yaml.loader import SafeLoader
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-
 import os
 
 st.set_page_config(
