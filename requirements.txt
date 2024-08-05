@@ -1,6 +1,5 @@
 streamlit
-pysqlite3-binary
-pysqlite3>=3.35.0
+db-sqlite3>=3.35.0
 pandas
 langchain_community
 langchain
