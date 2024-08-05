@@ -8,6 +8,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from streamlit_authenticator import Authenticate
 import yaml
+import openai
 from yaml.loader import SafeLoader
 import os
 
