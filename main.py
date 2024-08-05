@@ -21,6 +21,8 @@ st.set_page_config(
 if "visibility" not in st.session_state:
     st.session_state.disabled = False
 
+openai.api_key=st.secrets["OPENAI_API_KEY"]
+
 @st.cache_resource
 def load_model():
     model = ChatOpenAI(model_name="gpt-4",temperature=0)
