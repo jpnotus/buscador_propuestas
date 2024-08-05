@@ -11,6 +11,9 @@ import yaml
 import openai
 from yaml.loader import SafeLoader
 import os
+import sys
+
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 st.set_page_config(
     page_title="Buscador Propuestas",
