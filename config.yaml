@@ -1,0 +1,17 @@
+credentials:
+  usernames:
+    pablo:
+      email: pablo@notus.com
+      name: Pablo Senosiain
+      password: $2b$12$BI0rtq1ymTDIOn0tcLdaMu0XsBm4LvLmxD31kfA7ENqi39hl6a.W2
+    seba:
+      email: sebastian@notus.com
+      name: Sebastian Maturana
+      password: $2b$12$/YEekw0GCYGpdbwmEPk9qOroNsCkkWjLqxLTiddj.2FoJZNUvUovK
+cookie:
+  expiry_days: 0
+  key: random_signature_key
+  name: random_cookie_name
+preauthorized:
+  emails:
+  - juanpaul@notus.com
