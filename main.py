@@ -6,6 +6,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
+import sqlite3
 from streamlit_authenticator import Authenticate
 import yaml
 import openai
