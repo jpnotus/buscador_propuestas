@@ -277,7 +277,7 @@ if authentication_status:
     st.subheader('¿No encontraste un proyecto? ¡Te ayudo a buscar uno similar!')
     if "messages" not in st.session_state:
         st.session_state.messages = []
-        st.session_state.messages.append({"role": "assistant", "content": 'Hola 👋 Dime qué buscas :)'})
+        st.session_state.messages.append({"role": "assistant", "content": 'Hola 👋 Intenta algo así: "Dime los proyectos más similares a..." :)'})
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
