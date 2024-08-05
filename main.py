@@ -11,6 +11,10 @@ from streamlit_authenticator import Authenticate
 import yaml
 import openai
 from yaml.loader import SafeLoader
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.vectorstores import FAISS
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
 import os
 
 st.set_page_config(
@@ -57,6 +61,7 @@ chain_type_kwargs = {"prompt": PROMPT}
 # DATAFRAME
 
 df=pd.read_excel('BBDD_Proyectos.xlsx').rename(columns={'Nombre Proyecto':'Proyecto'})
+
 
 
 
@@ -263,13 +268,14 @@ if authentication_status:
 
     persist_directory = 'docs/chroma/'
     embedding = OpenAIEmbeddings()
-    vectordb = Chroma(
-        persist_directory=persist_directory,
-        embedding_function=embedding
-    )
-
-
-    qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vectordb.as_retriever(), chain_type_kwargs=chain_type_kwargs)
+    loader = PyPDFLoader("Notus Proyectos.pdf")
+    pages = loader.load()
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size = 1500,
+        chunk_overlap = 150)
+    splits = text_splitter.split_documents(pages)
+    docsearch =FAISS.from_documents(splits, embedding)    
+    qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=docsearch.as_retriever(), chain_type_kwargs=chain_type_kwargs)
     st.subheader('¿No encontraste un proyecto? ¡Te ayudo a buscar uno similar!')
     if "messages" not in st.session_state:
         st.session_state.messages = []
