@@ -5,3 +5,4 @@ langchain
 streamlit_authenticator
 langchain_openai
 openpyxl
+chromadb
