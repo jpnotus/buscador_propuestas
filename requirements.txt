@@ -6,3 +6,4 @@ langchain_openai
 openpyxl
 langchain
 pypdf
+faiss-cpu
