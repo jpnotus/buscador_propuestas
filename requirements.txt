@@ -1,5 +1,5 @@
 streamlit
-db-sqlite3>=3.35.0
+db-sqlite3
 pandas
 langchain_community
 langchain
