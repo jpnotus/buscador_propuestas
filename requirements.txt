@@ -5,3 +5,4 @@ streamlit_authenticator
 langchain_openai
 openpyxl
 langchain
+pypdf
