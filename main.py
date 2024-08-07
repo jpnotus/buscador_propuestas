@@ -68,6 +68,7 @@ df=df[['ID','Proyecto',
       'Metodología',
       'Industria',
       'Tipo de Problema',
+       'Desarrollo Herramienta',
       'Descripción']]
 
 
