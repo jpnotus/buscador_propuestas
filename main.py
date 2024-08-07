@@ -274,6 +274,150 @@ if authentication_status:
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
+    elif options_serv == [] and options_met == [] and options_ind == [] and options_prob == [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)].drop_duplicates(subset=['ID', 'Desarrollo Herramienta'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+    elif options_serv == [] and options_met == [] and options_ind == [] and options_prob != [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)].drop_duplicates(subset=['ID', 'Desarrollo Herramienta', 'Tipo de Problema'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+    elif options_serv == [] and options_met == [] and options_ind != [] and options_prob == [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Industria'].isin(options_ind)].drop_duplicates(subset=['ID', 'Desarrollo Herramienta', 'Industria'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+    elif options_serv == [] and options_met != [] and options_ind == [] and options_prob == [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Metodología'].isin(options_met)].drop_duplicates(subset=['ID', 'Desarrollo Herramienta', 'Metodología'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+    elif options_serv != [] and options_met == [] and options_ind == [] and options_prob == [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Servicio'].isin(options_serv)].drop_duplicates(subset=['ID', 'Desarrollo Herramienta', 'Tipo de Servicio'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    elif options_serv == [] and options_met == [] and options_ind != [] and options_prob != [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)].Industria.isin(options_ind)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)].Industria.isin(options_ind)]['Tipo de Problema'].isin(options_prob)].drop_duplicates(subset=['ID', 'Desarrollo Herramienta', 'Industria','Tipo de Problema'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    elif options_serv == [] and options_met != [] and options_ind != [] and options_prob == [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)].Metodología.isin(options_met)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)].Metodología.isin(options_met)]['Industria'].isin(options_ind)].drop_duplicates(subset=['ID', 'Desarrollo Herramienta', 'Metodología','Industria'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    elif options_serv != [] and options_met == [] and options_ind == [] and options_prob != [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Servicio'].isin(options_serv)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Servicio'].isin(options_serv)]['Tipo de Problema'].isin(options_prob)].drop_duplicates(subset=['ID', 'Desarrollo Herramienta', 'Tipo de Servicio','Tipo de Problema'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    elif options_serv != [] and options_met == [] and options_ind != [] and options_prob == [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Servicio'].isin(options_serv)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Servicio'].isin(options_serv)]['Industria'].isin(options_ind)].drop_duplicates(subset=['ID', 'Desarrollo Herramienta', 'Tipo de Servicio','Industria'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    elif options_serv != [] and options_met != [] and options_ind == [] and options_prob == [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Servicio'].isin(options_serv)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Servicio'].isin(options_serv)]['Metodología'].isin(options_met)].drop_duplicates(subset=['ID', 'Desarrollo Herramienta', 'Tipo de Servicio','Metodología'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    elif options_serv != [] and options_met != [] and options_ind != [] and options_prob != [] and options_des!=[]:
+        df_aux=df[df['Tipo de Servicio'].isin(options_serv)][df[df['Tipo de Servicio'].isin(options_serv)].Metodología.isin(options_met)][df[df['Tipo de Servicio'].isin(options_serv)][df[df['Tipo de Servicio'].isin(options_serv)].Metodología.isin(options_met)].Industria.isin(options_ind)][df[df['Tipo de Servicio'].isin(options_serv)][df[df['Tipo de Servicio'].isin(options_serv)].Metodología.isin(options_met)][df[df['Tipo de Servicio'].isin(options_serv)][df[df['Tipo de Servicio'].isin(options_serv)].Metodología.isin(options_met)].Industria.isin(options_ind)]['Tipo de Problema'].isin(options_prob)][df[df['Tipo de Servicio'].isin(options_serv)][df[df['Tipo de Servicio'].isin(options_serv)].Metodología.isin(options_met)][df[df['Tipo de Servicio'].isin(options_serv)][df[df['Tipo de Servicio'].isin(options_serv)].Metodología.isin(options_met)].Industria.isin(options_ind)][df[df['Tipo de Servicio'].isin(options_serv)][df[df['Tipo de Servicio'].isin(options_serv)].Metodología.isin(options_met)][df[df['Tipo de Servicio'].isin(options_serv)][df[df['Tipo de Servicio'].isin(options_serv)].Metodología.isin(options_met)].Industria.isin(options_ind)]['Tipo de Problema'].isin(options_prob)]['Desarrollo Herramienta'].isin(options_des)].drop_duplicates(subset=['ID', 'Tipo de Servicio', 'Metodología','Industria','Tipo de Problema', 'Desarrollo Herramienta'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    elif options_serv == [] and options_met != [] and options_ind != [] and options_prob != [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)]['Industria'].isin(options_ind)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)]['Industria'].isin(options_ind)]['Metodología'].isin(options_met)].drop_duplicates(subset=['ID', 'Metodología','Industria','Tipo de Problema', 'Desarrollo Herramienta'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    elif options_serv != [] and options_met == [] and options_ind != [] and options_prob != [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)]['Industria'].isin(options_ind)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)]['Industria'].isin(options_ind)]['Tipo de Servicio'].isin(options_serv)].drop_duplicates(subset=['ID', 'Tipo de Servicio','Industria','Tipo de Problema', 'Desarrollo Herramienta'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    elif options_serv != [] and options_met != [] and options_ind == [] and options_prob != [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)]['Metodología'].isin(options_met)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Tipo de Problema'].isin(options_prob)]['Metodología'].isin(options_met)]['Tipo de Servicio'].isin(options_serv)].drop_duplicates(subset=['ID', 'Tipo de Servicio','Metodología','Tipo de Problema', 'Desarrollo Herramienta'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    elif options_serv != [] and options_met != [] and options_ind != [] and options_prob == [] and options_des!=[]:
+        df_aux=df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Industria'].isin(options_ind)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Industria'].isin(options_ind)]['Metodología'].isin(options_met)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Industria'].isin(options_ind)][df[df['Desarrollo Herramienta'].isin(options_des)][df[df['Desarrollo Herramienta'].isin(options_des)]['Industria'].isin(options_ind)]['Metodología'].isin(options_met)]['Tipo de Servicio'].isin(options_serv)].drop_duplicates(subset=['ID', 'Tipo de Servicio','Metodología','Industria', 'Desarrollo Herramienta'], ignore_index=True).drop(columns=['ID']).reset_index(drop=True).copy()
+        n=df_aux.Proyecto.nunique()
+        if n==0:
+            st.warning('No se encontraron proyectos')
+        else:
+            st.success('Se encontraron '+str(n)+' proyectos únicos')
+            st.dataframe(df_aux, hide_index=True)
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
 
     embedding = OpenAIEmbeddings()
     loader = PyPDFLoader("Notus Proyectos.pdf")
