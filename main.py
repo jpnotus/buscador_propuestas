@@ -60,7 +60,7 @@ chain_type_kwargs = {"prompt": PROMPT}
 
 df=pd.read_excel('BBDD_Proyectos.xlsx').rename(columns={'Nombre Proyecto':'Proyecto'})
 df['Cliente']=df.ID.map(lambda x: st.secrets[str(x)])
-df=df[['Proyecto',
+df=df[['ID','Proyecto',
       'Cliente',
       'Tipo de Servicio',
       'Metodología',
