@@ -19,7 +19,7 @@ st.set_page_config(
     page_title="Buscador de Propuestas",
     layout="wide",
     menu_items={
-        'Get help': 'www.notus.cl', "Report a bug": 'www.notus.cl',"About": 'www.notus.cl'}
+        'Get help': 'https://notus.cl/contacto/', "Report a bug": 'https://notus.cl/contacto/',"About": 'https://notus.cl/contacto/'}
 )
 
 if "visibility" not in st.session_state:
