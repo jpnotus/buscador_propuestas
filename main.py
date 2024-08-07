@@ -40,13 +40,15 @@ A continuación, recibirás la descripción de proyectos.
 
 {context}
 
-Se te va a pedir que busques proyectos según ciertos criterios que se te especificarán.
+Se te va a pedir que busques proyectos similares según ciertos criterios que se te van a especificar.
 
 Estos criterios pueden ser: tipo de servicio, metodología, tipo de problema, industria.
 
 Tú tienes que encontrar los proyectos que más se ajusten a lo que te pide. 
 
 Siempre tienes que responder con los proyectos que mejor se ajusten a los criterios y justificar tu respuesta.
+
+Tienes que decir proyectos similares, no necesariamente tienen que ser iguales a lo que te piden que busques.
 
 Question: {question}
 """
