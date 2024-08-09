@@ -160,7 +160,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -176,7 +176,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -192,7 +192,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -208,7 +208,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -224,7 +224,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -240,7 +240,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -256,7 +256,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -272,7 +272,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -288,7 +288,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -304,7 +304,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -320,7 +320,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -336,7 +336,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -352,7 +352,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -368,7 +368,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -384,7 +384,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -399,7 +399,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -414,7 +414,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -429,7 +429,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -444,7 +444,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -459,7 +459,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -475,7 +475,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -491,7 +491,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -507,7 +507,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -523,7 +523,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -539,7 +539,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -555,7 +555,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -571,7 +571,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -587,7 +587,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -603,7 +603,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -619,7 +619,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -635,7 +635,7 @@ if authentication_status:
                     if lista != []:
                         question= question + ', '.join(lista) + ', '
                 answer=qa.run(question)
-                st.write("answer")
+                st.write(answer)
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
