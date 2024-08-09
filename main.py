@@ -97,6 +97,15 @@ if authentication_status:
 # Descripción
     st.info('Esta herramienta te ayuda a buscar propuestas pasadas según los criterios que selecciones.')
     st.header('Utiliza los siguiente filtros:')
+    embedding = OpenAIEmbeddings()
+    loader = PyPDFLoader("Notus Proyectos.pdf")
+    pages = loader.load()
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size = 1500,
+        chunk_overlap = 150)
+    splits = text_splitter.split_documents(pages)
+    docsearch =FAISS.from_documents(splits, embedding)     
+    qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=docsearch.as_retriever(), chain_type_kwargs=chain_type_kwargs)
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         serv=df['Tipo de Servicio'].unique()
@@ -145,6 +154,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -154,6 +170,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -163,6 +186,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -172,6 +202,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -181,6 +218,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -190,6 +234,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -199,6 +250,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -208,6 +266,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -217,6 +282,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -226,6 +298,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -235,6 +314,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -244,6 +330,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -253,6 +346,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -262,6 +362,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -271,6 +378,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -279,6 +393,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -287,6 +408,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -295,6 +423,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -303,6 +438,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -311,6 +453,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -320,6 +469,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -329,6 +485,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -338,6 +501,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -347,6 +517,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -356,6 +533,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -365,6 +549,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -374,6 +565,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -383,6 +581,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -392,6 +597,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -401,6 +613,13 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
@@ -410,33 +629,17 @@ if authentication_status:
         n=df_aux.Proyecto.nunique()
         if n==0:
             st.warning('No se encontraron proyectos')
+            if st.button("Preguntar por similar"):
+                question= 'Dime los proyectos más similares a '
+                for lista in [options_serv, options_met, options_ind, options_prob, options_des]:
+                    if lista != []:
+                        question= question + ', '.join(lista) + ', '
+                answer=qa.run(question)
+                st.write("answer")
         else:
             st.success('Se encontraron '+str(n)+' proyectos únicos')
             st.dataframe(df_aux, hide_index=True)
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-    
-
-    embedding = OpenAIEmbeddings()
-    loader = PyPDFLoader("Notus Proyectos.pdf")
-    pages = loader.load()
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size = 1500,
-        chunk_overlap = 150)
-    splits = text_splitter.split_documents(pages)
-    docsearch =FAISS.from_documents(splits, embedding)     
-    qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=docsearch.as_retriever(), chain_type_kwargs=chain_type_kwargs)
     st.subheader('¿No encontraste un proyecto? ¡Te ayudo a buscar uno similar!')
     if "messages" not in st.session_state:
         st.session_state.messages = []
