@@ -78,18 +78,9 @@ with open('config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
 
-authenticator = Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days']
-)
 
-name, authentication_status, username = authenticator.login(location='main')
+if True:
 
-if authentication_status:
-    authenticator.logout('Logout', 'main')
-    st.write(f'Bienvenido *{name}*')
 # Título
     st.title(':paperclip: Buscador de Propuestas')
 
